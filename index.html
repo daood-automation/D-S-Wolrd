@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#1a120b" />
+<title>D&middot;S World</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="assets/avatars/daood.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Infant:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= PIN / ARRIVAL SCREEN ================= -->
+<section id="arrival" class="screen active">
+  <div class="stars" id="stars"></div>
+  <div class="lamp-glow"></div>
+
+  <div class="arrival-inner">
+    <div id="arrivalText" class="arrival-text">
+      <p class="line line-title" data-text="our world"></p>
+      <p class="line line-sub" data-text=""></p>
+      <p class="line line-sub2" data-text=""></p>
+    </div>
+
+    <div id="pinArea" class="pin-area">
+      <p class="pin-label">come in</p>
+      <div class="pin-dots" id="pinDots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="keypad" id="keypad">
+        <button data-key="1">1</button>
+        <button data-key="2">2</button>
+        <button data-key="3">3</button>
+        <button data-key="4">4</button>
+        <button data-key="5">5</button>
+        <button data-key="6">6</button>
+        <button data-key="7">7</button>
+        <button data-key="8">8</button>
+        <button data-key="9">9</button>
+        <button class="ghost" data-key="clear">clear</button>
+        <button data-key="0">0</button>
+        <button class="ghost" data-key="back">&#8592;</button>
+      </div>
+      <p class="pin-hint" id="pinHint"></p>
+    </div>
+  </div>
+
+  <div id="thresholdPhrase" class="threshold-phrase"></div>
+</section>
+
+<!-- ================= HOME SCREEN ================= -->
+<section id="home" class="screen">
+  <div class="home-bg" id="homeBg"></div>
+  <div class="home-overlay"></div>
+
+  <header class="home-header">
+    <h1 class="wordmark">D&middot;S World</h1>
+    <button class="icon-btn" id="settingsBtn" aria-label="Settings">&#9881;</button>
+  </header>
+
+  <div class="presence-row">
+    <button class="presence-card" id="daoodCard">
+      <span class="avatar-wrap">
+        <img src="assets/avatars/daood.svg" id="daoodAvatar" class="avatar-img" alt="Daood's avatar" />
+        <input type="file" id="daoodPhotoInput" accept="image/*" class="hidden-input" />
+      </span>
+      <span class="presence-name">Daood</span>
+      <span class="presence-city">Lahore &middot; <span id="daoodTime">--:--</span></span>
+    </button>
+
+    <div class="presence-heart">&#10084;</div>
+
+    <button class="presence-card" id="saimaCard">
+      <span class="avatar-wrap">
+        <img src="assets/avatars/saima.svg" id="saimaAvatar" class="avatar-img" alt="Saima's avatar" />
+        <input type="file" id="saimaPhotoInput" accept="image/*" class="hidden-input" />
+      </span>
+      <span class="presence-name">Saima</span>
+      <span class="presence-city">Faisalabad &middot; <span id="saimaTime">--:--</span></span>
+    </button>
+  </div>
+
+  <p class="tap-hint">tap an avatar to set your own photo</p>
+
+  <div class="tiles">
+    <button class="tile" id="tileWorld">
+      <span class="tile-title">step into our world</span>
+      <span class="tile-sub">explore our home</span>
+    </button>
+    <button class="tile" id="tileWhisper">
+      <span class="tile-title">whisper something</span>
+      <span class="tile-sub">send a sweet message</span>
+    </button>
+    <button class="tile" id="tileMemory">
+      <span class="tile-title">add a memory</span>
+      <span class="tile-sub">photos, journal entries</span>
+    </button>
+    <button class="tile" id="tileStory">
+      <span class="tile-title">relive our story</span>
+      <span class="tile-sub">see our timeline</span>
+    </button>
+  </div>
+
+  <button class="bg-change-btn" id="bgChangeBtn">change our home photo</button>
+  <input type="file" id="bgPhotoInput" accept="image/*" class="hidden-input" />
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-tile="home">home</button>
+    <button class="nav-item" data-tile="gallery">gallery</button>
+    <button class="nav-item" data-tile="calendar">calendar</button>
+    <button class="nav-item" data-tile="messages">messages</button>
+    <button class="nav-item" data-tile="settings">settings</button>
+  </nav>
+</section>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

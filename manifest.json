@@ -1,0 +1,18 @@
+{
+  "name": "D\u00b7S World",
+  "short_name": "D\u00b7S World",
+  "description": "A private shared world for Daood and Saima",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#14100c",
+  "theme_color": "#14100c",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/avatars/daood.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
